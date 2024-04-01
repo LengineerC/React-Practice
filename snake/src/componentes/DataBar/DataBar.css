@@ -1,0 +1,21 @@
+.speed, .score, .time, .length{
+    color: rgb(216, 216, 216);
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.speed{
+    -webkit-text-stroke: 1px rgb(154, 0, 0);
+}
+
+.score{
+    -webkit-text-stroke: 1px rgb(0, 90, 154);
+}
+
+.time{
+    -webkit-text-stroke: 1px rgb(187, 201, 1);
+}
+
+.length{
+    -webkit-text-stroke: 1px rgb(0, 147, 22);
+}

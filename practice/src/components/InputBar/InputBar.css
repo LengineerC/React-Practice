@@ -1,0 +1,11 @@
+.inputBar{
+    margin-right: 10%;
+    width: 60%;
+}
+
+.addrInvalid{
+    margin-right: 10%;
+    width: 60%;
+    border: 2px solid red !important;
+    background-color: rgba(255, 68, 68, 0.42) !important;
+}

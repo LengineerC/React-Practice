@@ -1,0 +1,57 @@
+.unicode-converter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 30vh; */
+    margin:10% auto;
+}
+
+.unicode-converter #container {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #4bcffe;
+    transition: border-color 0.5s;
+}
+
+.unicode-converter #container:hover {
+    border-color: #0056b3;
+}
+
+.unicode-converter #inputText, .unicode-converter #outputText {
+    width: calc(100% - 20px);
+    height: 50px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.unicode-converter label {
+    text-align: left;
+    float: left;
+    width: 100%;
+}
+
+.unicode-converter button {
+    margin-top: 10px;
+    margin-right:3px;
+    padding: 5px 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.unicode-converter button:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,42 @@
+.buttonNum{
+    background-color: rgb(133,132,130);
+    font-size: 36px;
+    font-weight: 600;
+    border: 1px white solid;
+    width: 160px;
+    height: 70px;
+    color:white;
+    text-align: center;
+    transition-duration: 0.5s;    
+}
+.buttonNum0{
+    background-color: rgb(133,132,130);
+    font-size: 36px;
+    font-weight: 600;
+    border: 1px white solid;
+    width: 320px;
+    height: 70px;
+    color:white;
+    text-align: center;
+    transition-duration: 0.5s;
+}
+  
+.buttonOp2{
+    background-color: rgb(250,158,72);
+    font-size: 36px;
+    font-weight: 600;
+    border: 1px white solid;
+    width: 160px;
+    height: 70px;
+    color:white;
+    text-align: center;
+    transition-duration: 0.5s;
+}
+
+.buttonNum:hover, .buttonNum0:hover{
+    background-color: rgb(156, 155, 154);
+}
+
+.buttonOp2:hover{
+    background-color: rgb(250, 171, 98);
+}

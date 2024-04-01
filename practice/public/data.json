@@ -1,0 +1,14 @@
+{
+    "paramJson": {
+      "addr": "192.168.0.1",
+      "port": "24",
+      "userName": "admin",
+      "password": "123456"
+    },
+    "formContent": [
+      { "label": "连接地址", "defaultValue": "192.168.0.1", "field": "addr", "type": "string", "required": "true" },
+      { "label": "端口号", "defaultValue": "21", "field": "port", "type": "string", "required": "true" },
+      { "label": "用户名", "defaultValue": "user", "field": "userName", "type": "string", "required": "true" },
+      { "label": "密码", "defaultValue": "password", "field": "password", "type": "string", "required": "true" }
+    ]
+  }

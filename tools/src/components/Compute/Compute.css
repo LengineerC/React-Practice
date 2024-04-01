@@ -1,0 +1,14 @@
+.buttonEqual{
+    background-color: rgb(250,158,72);
+    font-size: 36px;
+    font-weight: 600;
+    border: 1px white solid;
+    width: 160px;
+    height: 70px;
+    color:white;
+    text-align: center;
+    transition-duration: 0.5s;
+}
+.buttonEqual:hover{
+    background-color: rgb(250, 171, 98);
+}

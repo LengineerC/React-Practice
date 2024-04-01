@@ -1,0 +1,59 @@
+.level1_main{
+    background-image: url("../../../public/game_background.JPG");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    padding: 0px 10vw 0px 0px;
+
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    margin: 0px;
+    /* overflow-x: hidden; */
+}
+
+.map{
+    text-align: center;
+    height: auto;
+    width: auto;
+    /* border: 1px solid black; */
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    background-color: rgba(0, 65, 139, 0.288);
+    margin-left: 7vw;
+    border-radius: 5px;
+}
+
+.dataBar{
+    /* border: 1px solid black; */
+    height: 700px;
+    width: 20vw;
+    padding-top: 5vh;
+    padding-left: 2vw;
+    margin-left: 10vw;
+    background-color: rgba(156, 156, 156, 0.281);
+    /* margin-right:10vw; */
+}
+
+#gameCanvas{
+    background-color: rgba(0, 3, 40, 0.758);
+}
+
+#pause{
+    height: 700px;
+    width: 700px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 75px;
+    font-weight: 700;
+    padding-top: 33%;
+    box-sizing: border-box;
+}

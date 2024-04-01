@@ -1,0 +1,54 @@
+.menuBackground{
+    background-image: url("../../../public/background.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    /* background-color: black; */
+    /* border: 1px solid black; */
+}
+
+.menuMain{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 40vw;
+    /* border: 1px solid red; */
+    margin-left: 10vw;
+
+    padding-top: 20vh;
+}
+
+.menuTitle{
+    width: auto;
+    height: 30vh;
+    /* border: 1px solid white; */
+    color: rgb(94, 182, 255);
+    text-shadow: 10px 10px 10px rgb(49, 49, 49);
+    font-size: 100px;
+    font-weight: 800;
+}
+
+.menuContainer{
+    width: auto;
+    height: 15vh;
+    /* border: 1px solid white; */
+}
+
+.menuLink{
+    display: inline-block;
+    font-size: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    /* border: 1px solid white; */
+    padding: 10px 20px 10px 20px;
+    transition: all 0.3s ease-in-out;
+    color: rgb(181, 181, 181);
+    -webkit-text-stroke: 2px rgb(255, 254, 195);
+}
+.menuLink:hover{
+    color: rgb(217, 240, 255);
+    transform: scale(1.1);
+}
