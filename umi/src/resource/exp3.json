@@ -1,0 +1,31 @@
+[
+    {
+        "deviceCommandId": 25,
+        "deviceId": 7,
+        "name": "测试设备指令",
+        "description": "",
+        "type": 0,
+        "sequence": 1
+    },
+    {
+        "deviceCommandId": 27,
+        "deviceId": 12,
+        "name": "------ANT1--TX",
+        "type": 1,
+        "sequence": 2
+    },
+    {
+        "deviceCommandId": 28,
+        "deviceId": 12,
+        "name": "11B-1M-CH13(2471)",
+        "type": 1,
+        "sequence": 3
+    },
+    {
+        "deviceCommandId": 29,
+        "deviceId": 12,
+        "name": "11B-11M-CH13(2472)",
+        "type": 1,
+        "sequence": 4
+    }
+]

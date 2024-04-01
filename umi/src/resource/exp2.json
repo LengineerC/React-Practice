@@ -1,0 +1,76 @@
+{
+    "type": "Australia Birth Certificate",
+    "countryCode": "AU",
+    "currentData": {
+        "firstName": "GuoRong",
+        "lastName": "XU",
+        "gender": "Male",
+        "countryCode": "AU",
+        "service": [
+            "Australia Birth Certificate"
+        ],
+        "identityVariables": {
+            "birthRegistrationState": "",
+            "birthRegistrationDate": null,
+            "birthRegistrationNo": ""
+        },
+        "clientReference": "Test_0001",
+        "customerId": 661,
+        "dateOfBirth": null,
+        "consentObtained": {
+            "Australia Birth Certificate": true
+        },
+        "middleName": null
+    },
+    "allData": false,
+    "dataArray": [
+        {
+            "path": "./",
+            "enable": true,
+            "dataType": "String",
+            "name": "firstName",
+            "sampleValue": "Jane",
+            "currentValue": "GuoRong"
+        },
+        {
+            "path": "./",
+            "enable": true,
+            "dataType": "String",
+            "name": "lastName",
+            "sampleValue": "Citizen",
+            "currentValue": "XU"
+        },
+        {
+            "path": "./identityVariables",
+            "enable": true,
+            "dataType": "String",
+            "name": "birthRegistrationState",
+            "sampleValue": "VIC",
+            "currentValue": ""
+        },
+        {
+            "path": "./identityVariables",
+            "enable": true,
+            "dataType": "Date",
+            "name": "birthRegistrationDate",
+            "sampleValue": "08/27/1984",
+            "currentValue": null
+        },
+        {
+            "path": "./identityVariables",
+            "enable": true,
+            "dataType": "String",
+            "name": "birthRegistrationNo",
+            "sampleValue": "500156",
+            "currentValue": ""
+        },
+        {
+            "path": "./",
+            "enable": true,
+            "dataType": "Date",
+            "name": "dateOfBirth",
+            "sampleValue": "06/07/1984",
+            "currentValue": null
+        }
+    ]
+}

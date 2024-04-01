@@ -1,0 +1,24 @@
+.main{
+    /* border: 1px solid black; */
+
+    display: flex;
+    height: 70vh;
+    width: 40vw;
+    margin: 10vh auto 0 auto;
+    flex-direction: column;
+}
+
+.contain{
+    /* border: 1px solid red; */
+    
+    text-align: center;
+    align-items: center;
+    padding: 1vh 2vw 0 2vw;
+    height: 7vh;
+    width: auto;
+}
+
+.btn{
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
