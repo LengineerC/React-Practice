@@ -5,9 +5,10 @@ export default defineConfig({
     type: 'none',
   },
   routes: [
-    { path: '/', component: '@/exp3_pages/indexNew.jsx' },
+    { path: '/', component: '@/exp3_new_pages/indexNew' },
     { path:'/exp1', component: '@/exp1_pages/index.jsx' },
     { path:'/exp2', component: '@/exp2_pages/index.jsx' },
+    { path:'/exp3-old', component: '@/exp3_pages/index.jsx' },
     { path:'/table', component: '@/exp3_pages/App.jsx' },
   ],
   fastRefresh: {},

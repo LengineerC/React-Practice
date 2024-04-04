@@ -14,10 +14,11 @@ export default class Index extends Component {
     super(props);
     this.state={
       form:React.createRef(),
-      data:dataSource.map((item,index)=>({
-        ...item,
-        sortKey:index
-      })),
+      // data:dataSource.map((item,index)=>({
+      //   ...item,
+      //   sortKey:index
+      // })),
+      data:dataSource,
       editingKey:"",
     }
   }
@@ -68,27 +69,36 @@ export default class Index extends Component {
   move=(sequence,dir)=>{
     let newData=[...this.state.data];
     const index=newData.findIndex(item=>item.sequence===sequence);
+    const item=newData[index];
     if(index>-1){
       switch(dir){
         case "up":{
-          if(newData[index].sortKey>0){
-            newData[index].sortKey--;
-            newData[index-1].sortKey++;
+          // if(newData[index].sortKey>0){
+          //   newData[index].sortKey--;
+          //   newData[index-1].sortKey++;
+          if(index!==0){
+            newData.splice(index,1);
+            newData.splice(index-1,0,item);
           }
           break;
         }
         case "down":{
-          if(newData[index].sortKey<newData.length-1){
-            newData[index].sortKey++;
-            newData[index+1].sortKey--;
+          // if(newData[index].sortKey<newData.length-1){
+          //   newData[index].sortKey++;
+          //   newData[index+1].sortKey--;
+          // }
+          if(index!==newData.length-1){
+            newData.splice(index,1);
+            newData.splice(index+1,0,item);
           }
           break;
         }
         default:
           break;
+          
       }
     }
-    newData=newData.sort((a,b)=>a.sortKey-b.sortKey);
+    // newData=newData.sort((a,b)=>a.sortKey-b.sortKey);
     this.setState({data:newData});
   }
 
