@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { Drawer,Input, InputNumber, Space, Button, Form, Select } from 'antd';
-import { DataType } from './types';
+import { DataType } from '../../types';
 
 import { FormInstance } from 'antd/lib/form';
+
+import './MyDrawer.css';
 
 type Props = {
   open:boolean,
@@ -13,6 +15,22 @@ type Props = {
 type State = {
   row:DataType,
 }
+
+type Option={
+  label:string,
+  value:number,
+}
+
+const options:Option[]=[
+  {
+    label:"是",
+    value:1,
+  },
+  {
+    label:"否",
+    value:0,
+  },
+];
 
 export default class MyDrawer extends Component<Props, State> {
   formRef=React.createRef<FormInstance>();
@@ -41,6 +59,7 @@ export default class MyDrawer extends Component<Props, State> {
         ...editedRow
       };
       // console.log(newRow);
+      if(newRow.summary===undefined) newRow.summary='';
       return this.props.saveEdit(newRow);
     }
     return this.props.saveEdit(this.state.row);
@@ -49,42 +68,36 @@ export default class MyDrawer extends Component<Props, State> {
   render() {
     const {open}=this.props;
     return (
-      <Form initialValues={this.state.row} onFinish={this.onFinish} ref={this.formRef}>
+      <Form 
+        initialValues={this.state.row} 
+        onFinish={this.onFinish} 
+        ref={this.formRef}
+        labelCol={{span:"5"}}
+        wrapperCol={{span:"19"}}
+      >
         <Drawer 
           title="修改" 
           onClose={()=>this.onClose(false)} 
           open={open}
-          extra={
-            <Space>
-                <Button onClick={()=>this.onClose(false)}>取消</Button>
-                <Button type="primary" htmlType="submit" onClick={this.onSave}>保存</Button>
-            </Space>
-          }
         >
           <Form.Item label="命令名称" name="name">
             <Input/>
           </Form.Item>
           <Form.Item label="设备名称" name="deviceId">
-            <InputNumber/>
+            <InputNumber style={{width:"100%"}}/>
           </Form.Item>
           <Form.Item label="说明" name="summary">
             <Input/>
           </Form.Item>
           <Form.Item label="设定状态" name="type">
             <Select 
-              style={{width:90}}
-              options={[
-                {
-                  label:"是",
-                  value:1
-                },
-                {
-                  label:"否",
-                  value:0
-                }
-              ]}
+              options={options}
             />
           </Form.Item>
+          <Space size={20} className='btn-line'>
+                <Button onClick={()=>this.onClose(false)}>取消</Button>
+                <Button type="primary" htmlType="submit" onClick={this.onSave}>保存</Button>
+            </Space>
         </Drawer>
       </Form>
     )
