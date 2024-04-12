@@ -22,16 +22,25 @@ enum op{
   MOVE_DOWN,
 }
 
-export default class IndexNew extends Component<Props, State> {
+export default class Index extends Component<Props, State> {
 
   constructor(props:Props){
     super(props);
 
     this.state = {
-      data:data as State['data'],
+      data:[] as State["data"],
       editing:false,    
       chosenRow:{} as DataType,
     };
+  }
+
+  componentDidMount(): void {
+      let initData:DataType[]=[...data];
+      initData.forEach((item:DataType)=>{
+        item["state"]=false;
+        this.setState({data:initData});
+      })
+      
   }
 
   //Debug
@@ -77,6 +86,8 @@ export default class IndexNew extends Component<Props, State> {
     this.setState({editing:true});
     const chosenRow:DataType=this.state.data.find(item=>item.sequence===sequence) as DataType;
     this.setState({chosenRow});
+    console.log(chosenRow);
+    
     
   }
 
@@ -88,92 +99,105 @@ export default class IndexNew extends Component<Props, State> {
     this.setState({data:newData});
   }
 
-  isChineseCharacter=(ch:string):boolean=>{
-    const re=new RegExp('^[\\u4E00-\\u9FA5]$');
-    return re.test(ch);
-  }
+  // isChineseCharacter=(ch:string):boolean=>{
+  //   const re=new RegExp('^[\\u4E00-\\u9FA5]$');
+  //   return re.test(ch);
+  // }
 
   render() {
     const columns:ColumnsType<DataType>=[
       {
         key:"index",
         title:"执行序号",
-        width:"10%",
+        width:"7%",
+        ellipsis:true,
+        align:"center",
         render:(text,record,index)=>++index,
       },
       {
         key:"name",
         title:"命令名称",
         dataIndex:"name",
-        width:"20%",
-        render:(text,record,index)=>{
-          // console.log(text.length);
-          let newText=text.slice(0,18);
-          let numChineseCh=0;
-          let len=0;
-          let isOversize:boolean=false;
-          for(let ch of text){
-            if(this.isChineseCharacter(ch)){
-              len+=2;
-              numChineseCh++;
-            }else len++;
-            if(len>21) isOversize=true;
-          }
-          if(isOversize){
-            newText=newText.slice(0,Math.max(18-numChineseCh,9));
-            return newText+"...";
-          }else return text;
-        }
+        width:"30%",
+        ellipsis:true,
+
+        // render:(text,record,index)=>{
+        //   // console.log(text.length);
+        //   let newText=text.slice(0,18);
+        //   let numChineseCh=0;
+        //   let len=0;
+        //   let isOversize:boolean=false;
+        //   for(let ch of text){
+        //     if(this.isChineseCharacter(ch)){
+        //       len+=2;
+        //       numChineseCh++;
+        //     }else len++;
+        //     if(len>21) isOversize=true;
+        //   }
+        //   if(isOversize){
+        //     newText=newText.slice(0,Math.max(18-numChineseCh,9));
+        //     return newText+"...";
+        //   }else return text;
+        // }
       },
       {
         key:"deviceId",
         title:"设备名称",
         dataIndex:"deviceId",
-        width:"10%",
+        width:"15%",
+      },
+      {
+        key:"type",
+        title:"指令类型",
+        dataIndex:"type",
+        width:"18%",
         render:(text,record,index)=>{
-          // console.log(typeof(text));
-          if(text>999999) return ">999999";
-          else if(text<-99999) return "<-99999";
-          else return text;
+          return record.type==0?"初始化指令":"普通指令";
         }
       },
       {
         key:"summary",
         title:"说明",
         dataIndex:"summary",
-        width:"30%",
+        width:"10%",
+        ellipsis:true,
+        // render:(text,record,index)=>{
+        //   // console.log(text.length);
+        //   if(record.hasOwnProperty("summary")){
+        //     let newText=text.slice(0,36);
+        //     let numChineseCh=0;
+        //     let len=0;
+        //     let isOversize:boolean=false;
+        //     for(let ch of text){
+        //       if(this.isChineseCharacter(ch)){
+        //         len+=2;
+        //         numChineseCh++;
+        //       }else len++;
+        //       if(len>36) isOversize=true;
+        //     }
+        //     if(isOversize){
+        //       newText=newText.slice(0,Math.max(33-numChineseCh,16));
+        //       return newText+"...";
+        //     }else return text;
+        //   }
+        // }
+      },
+      {
+        key:"state",
+        title:"设定状态",
+        dataIndex:"type",
+        width:"11%",
         render:(text,record,index)=>{
-          // console.log(text.length);
-          if(record.hasOwnProperty("summary")){
-            let newText=text.slice(0,36);
-            let numChineseCh=0;
-            let len=0;
-            let isOversize:boolean=false;
-            for(let ch of text){
-              if(this.isChineseCharacter(ch)){
-                len+=2;
-                numChineseCh++;
-              }else len++;
-              if(len>36) isOversize=true;
-            }
-            if(isOversize){
-              newText=newText.slice(0,Math.max(33-numChineseCh,16));
-              return newText+"...";
-            }else return text;
+          if(record.hasOwnProperty("state")){
+            return record.state?"是":"否";
           }
         }
       },
       {
-        key:"type",
-        title:"设定状态",
-        dataIndex:"type",
-        width:"10%",
-        render:(text,record,index)=>text===1?"是":"否"
-      },
-      {
         key:"operation",
         title:"操作",
-        width:"35%",
+        width:"9%",
+        align:"center",
         render:(_,record)=>{
           return(
             <span>
@@ -198,7 +222,7 @@ export default class IndexNew extends Component<Props, State> {
       }
     ]
     return (
-      <div className='main'>
+      <div className='table-main'>
         <Form>
           <Table
             columns={columns}
