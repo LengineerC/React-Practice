@@ -88,7 +88,6 @@ export default class Index extends Component<Props, State> {
     this.setState({chosenRow});
     console.log(chosenRow);
     
-    
   }
 
   saveEdit=(editing:boolean,newRow:DataType)=>{
